@@ -1,0 +1,71 @@
+% This is the outer beamer theme file of the UB theme.
+% by Jose L. Walteros <josewalt@buffalo.edu>
+%
+% This program is free software whose main use is intended for the University at Buffalo community: you can redistribute it and/or modify
+% it to fit your requirements. The template is set to emulate as close as possible the MS Power Point template provided by the UB foundation
+%  
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The author attemted to keep the overall 
+% consistency of the UB brand name, but by no means guarantees its accuracy. The author is not responsible for any use the final user gives to it.
+%
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerouterthemeUB}[2016/07/05 v1.0.0 The UB Beamer Theme]
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theme options, definitions and templates.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pgfdeclareimage[width=\paperwidth]{waterMark}{./logos/frameUB}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+% beamer specific options
+
+\mode<presentation> %refers to the first four modes (beamer,handout,second and trans). That is, to all modes except the article mode
+{
+	
+	%----------------------------------------------------------------------------------------------------------------------------------
+	
+	% Head
+	\defbeamertemplate*{headline}{UB theme}
+	{%
+		\leavevmode%
+		\begin{picture}(0,0)
+			\put(0,-27){\pgfuseimage{waterMark}}
+		\end{picture} %
+		\vskip 1.3cm %
+	}
+
+	%----------------------------------------------------------------------------------------------------------------------------------
+
+	% frame title
+	\setbeamertemplate{frametitle}
+	{ %
+			\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\insertframetitle \par%
+			\vskip 0.3cm %
+	}
+
+	%----------------------------------------------------------------------------------------------------------------------------------
+	%line
+		
+		\definecolor{BPoint}{RGB}{228,228,228}
+		\definecolor{Putnam}{RGB}{102,102,102}
+		\defbeamertemplate*{footline}{pagenum}
+	{%
+		\hspace{0.265\textwidth}\textcolor{Putnam}{}
+		\hfill%
+		\usebeamercolor[UBBlue]{page}\usebeamerfont{page}\insertpagenumber\,/\,\insertpresentationendpage\kern1em\vskip2pt%
+		
+	}
+
+
+	  
+
+}
+\mode
+<all>

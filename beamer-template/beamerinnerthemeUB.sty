@@ -1,0 +1,109 @@
+% This is the inner beamer theme file of the UB theme.
+% by Jose L. Walteros <josewalt@buffalo.edu>
+%
+% This program is free software whose main use is intended for the University at Buffalo community: you can redistribute it and/or modify
+% it to fit your requirements. The template is set to emulate as close as possible the MS Power Point template provided by the UB foundation
+%  
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The author attemted to keep the overall 
+% consistency of the UB brand name, but by no means guarantees its accuracy. The author is not responsible for any use the final user gives to it.
+%
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerinnerthemeUB}[2016/07/05 v1.0.0 The UB Beamer Theme]
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% load required packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\RequirePackage{tikz}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theme options, definitions and templates.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pgfdeclareimage[width=\paperwidth]{title}{./logos/titleUB} %UB Temaplate 
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% beamer specific options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation> 
+{
+	
+	% title page
+	
+	\setbeamertemplate{title page}
+	{
+		\begin{picture}(0,0)
+			\put(-28.5,-275){\pgfuseimage{title}}  
+		\end{picture}
+		\begin{minipage}[b][\paperheight]{\textwidth}
+			\vfill
+			\vspace{2cm}
+			\ifx \inserttitle\@empty%
+			\else%
+			{\begin{center}\usebeamerfont{title}\usebeamercolor[UBWhite]{title}\inserttitle\end{center}}%
+			%\vspace*{1.5em}
+			\fi%
+			\vspace*{2.5em}
+			\ifx\insertauthor\@empty%
+			\else%
+			{\begin{flushleft}\usebeamerfont{author}\usebeamercolor[UBWhite]{author}\insertauthor\end{flushleft}}%
+			\vspace*{-1.75em}
+			\fi%
+			\ifx\insertinstitut\@empty%
+			\else%
+			{\begin{flushleft}\usebeamerfont{institute}\usebeamercolor[UBWhite]{institute}\insertinstitute\end{flushleft}}%
+			\fi%
+			\ifx\insertdate\@empty%
+			\else%
+			{\usebeamerfont{date}\usebeamercolor[UBWhite]{date}\insertdate}%
+			\fi%
+			\vfill
+			\vspace*{10mm}
+		\end{minipage}
+		
+	}
+
+	% Items in the table of contents
+	
+	\setbeamertemplate{section in toc}[sections numbered]
+	
+	% Icons for the items in the itemize lists
+	
+	\setbeamertemplate{itemize items}[circle]
+	
+	% Gamma's iconic sidebar
+	
+	\definecolor{Harriman}{RGB}{0,47,86}
+	\definecolor{BPoint}{RGB}{228,228,228}
+	\definecolor{Putnam}{RGB}{102,102,102}
+	
+	%Sidebar for GAMMA 
+	%\setbeamertemplate{sidebar left}{
+	%	\vspace*{-0.35cm}
+	%	\begin{tikzpicture}
+	%	\filldraw [fill=BPoint, draw=BPoint] (-.5,-0.375\textheight) rectangle (-0.4,0);
+	%	\filldraw [fill=Putnam, draw=Putnam] (-.5,-0.75\textheight) rectangle (-0.4,-0.375\textheight);
+	%	\filldraw [fill=Harriman, draw=Harriman] (-.5,-1.2\textheight) rectangle (-0.4,-.75\textheight);
+	%	\end{tikzpicture}
+	%}
+	
+	% Set watermark for the slides
+	\setbeamertemplate{background}{
+		\parbox[c][\paperheight]{\paperwidth}{%
+			\vfill \hfill 
+			\begin{tikzpicture}
+			\node[opacity=0]{\includegraphics[height=7cm]{./logos/crestUB}};
+			\end{tikzpicture}
+			\hspace{-1.96cm}
+			\vspace{-1.25cm}
+		}
+	}
+}
+
+\mode<all>

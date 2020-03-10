@@ -1,0 +1,58 @@
+% This is the main beamer theme file of the UB theme.
+% by Jose L. Walteros <josewalt@buffalo.edu>
+%
+% This program is free software whose main use is intended for the University at Buffalo community: you can redistribute it and/or modify
+% it to fit your requirements. The template is set to emulate as close as possible the MS Power Point template provided by the UB foundation
+%  
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The author attemted to keep the overall 
+% consistency of the UB brand name, but by no means guarantees its accuracy. The author is not responsible for any use the final user gives to it.
+%
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerfontthemeUB}[2016/07/05 v1.0.0 The UB Beamer Font Theme]
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% load required packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\RequirePackage{avant}  % Loads the helvetica font for the normal texts
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\mode<presentation>
+{
+
+	% Uses the Times fomt for the math sections
+
+		\usefonttheme[onlymath]{serif} 
+
+	% Fonts for the titleframe
+	
+	\setbeamerfont{title}{family={\fontfamily{serif}}, series=\bfseries, size = \LARGE} 
+	\setbeamerfont{author}{family=\rmfamily, size = \large}
+	\setbeamerfont{institute}{family=\rmfamily, size = \tiny}
+	\setbeamerfont{date}{family=\rmfamily, size = \tiny}
+
+	% Fonts for the table of contents
+	
+	\setbeamerfont{section in toc}{size=\large, family=\rmfamily, shape=\bf}
+	
+	% Font for the frame titles
+	
+	\setbeamerfont{frametitle}{family=\rmfamily, series=\bfseries, size = \LARGE} 
+
+	% Font for the footline
+	
+	\setbeamerfont{page}{family=\rmfamily, size = \scriptsize}
+	
+	% Fonts for the blocks
+
+	\setbeamerfont{block title}{family=\rmfamily, shape=\bf}
+
+}
+
+\mode
+<all>

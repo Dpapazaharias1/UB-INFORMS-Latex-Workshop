@@ -1,0 +1,54 @@
+% This is the main beamer theme file of the UB theme.
+% by Jose L. Walteros <josewalt@buffalo.edu>
+%
+% This program is free software whose main use is intended for the University at Buffalo community: you can redistribute it and/or modify
+% it to fit your requirements. The template is set to emulate as close as possible the MS Power Point template provided by the UB foundation
+%  
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The author attemted to keep the overall 
+% consistency of the UB brand name, but by no means guarantees its accuracy. The author is not responsible for any use the final user gives to it.
+%
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemeUB}[2016/07/05 v1.0.0 The UB Beamer Color Theme]
+
+%----------------------------------------------------------------------------------------------------------------------------------
+\mode<presentation>
+{
+	% Main colors
+	
+	\definecolor{UBBlue}{RGB}{0,91,187}
+	\definecolor{UBWhite}{RGB}{255,255,255}
+	\definecolor{UBGray}{RGB}{228,228,228}
+
+	% Alerted text
+	
+	\setbeamercolor{alerted text}{fg=red}
+	
+	% Color of the icons/numbers in both the itemize and enumerate lists
+
+	\setbeamercolor{item}{fg=UBBlue}
+
+	% Colors of the table of contents 
+	
+	\setbeamercolor{section in toc}{fg=UBBlue}
+	\setbeamercolor{subsection in toc}{fg=black}
+
+	% colors of the frames'  titles
+	
+	\setbeamercolor{frametitle}{fg=UBBlue,bg=UBWhite}
+
+	% Colors for the block sections
+	
+	\setbeamercolor{block title}{use=structure,fg=white,bg=UBBlue}
+	\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=alerted text.fg!75!black}
+	\setbeamercolor{block title example}{use=example text,fg=white,bg=example text.fg!75!black}
+
+	\setbeamercolor{block body}{parent=normal text,use=block title,bg=UBGray}
+	\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=UBGray}
+	\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=UBGray}
+
+}
+\mode
+<all>

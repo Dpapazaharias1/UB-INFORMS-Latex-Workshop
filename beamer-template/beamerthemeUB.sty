@@ -1,0 +1,49 @@
+% This is the main beamer theme file of the UB theme.
+% by Jose L. Walteros <josewalt@buffalo.edu>
+%
+% This program is free software whose main use is intended for the University at Buffalo community: you can redistribute it and/or modify
+% it to fit your requirements. The template is set to emulate as close as possible the MS Power Point template provided by the UB foundation
+%  
+% This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY. The author attemted to keep the overall 
+% consistency of the UB brand name, but by no means guarantees its accuracy. The author is not responsible for any use the final user gives to it.
+%
+
+%----------------------------------------------------------------------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemeUB}[2016/07/05 v1.0.0 The UB Beamer Theme]
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theme options and definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{navigation symbols}{} %Removes the navigation hyperlinks that generaly appear in the bottom right corner
+
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+		\frametitle{Outline}
+		\tableofcontents[ 
+		currentsection, 
+		sectionstyle=show/shaded,
+		subsectionstyle=hide/hide
+		] 
+	\end{frame}
+}
+
+%----------------------------------------------------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%beamer specific options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation> 
+{
+	\useinnertheme{UB}
+	\useoutertheme{UB}
+	\usecolortheme{UB}
+	\usefonttheme{UB}
+}
+
+\mode<all>
+
